@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kevi Automative - Contact</title>
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <h1>Kevi Automative</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Contact.html" class="selected">Contact</a></li>
+                <li><a href="Book.html">Book</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <!-- First Box: Contact Form -->
+            <div class="contact-box">
+                <h3>Send Us a Message</h3>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" placeholder="Your Message" rows="5" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!-- Second Box: Additional Information -->
+            <div class="contact-box">
+                <h3>Our Information</h3>
+                <p><strong>Address:</strong> 421 Strauss Crescent, Wadeville, Germiston</p>
+                <p><strong>Phone:</strong> 073 408 0841  ~  064 532 9344</p>
+                <p><strong>Email:</strong> kapere88@gmail.com</p>
+                <p><strong>Working Hours:</strong> Mon - Fri: 8 AM - 5 PM</p>
+
+                <!-- Google Maps Embed -->
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4402.199448235906!2d28.167452375417618!3d-26.27267967703443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDE2JzIxLjciUyAyOMKwMTAnMTIuMSJF!5e1!3m2!1sen!2sza!4v1742761062283!5m2!1sen!2sza"
+                        width="100%"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript to Handle Form Submission -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comment = document.getElementById('comment').value;
+
+            // Construct the WhatsApp message
+            const message = `Name: ${name}%0AEmail: ${email}%0AComment: ${comment}`;
+
+            // Construct the WhatsApp URL
+            const whatsappUrl = `https://wa.me/27731950005?text=${message}`;
+
+            // Open the WhatsApp link in a new tab
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            © 2025 Kevi Automotive. All Rights Reserved. | Privacy Policy | Terms of Service
+        </div>
+    </footer>
+</body>
+</html>
